@@ -105,12 +105,10 @@ class Audiotagger {
   /// [path]: The path of the file.
   ///
   /// [return]: A tag object of the ID3 tags of the song;
-  Future<Tag> readTags({
+  Future<Tag?> readTags({
     required String path,
   }) async {
-    return Tag.fromMap(await (readTagsAsMap(
-      path: path,
-    ) as FutureOr<Map<dynamic, dynamic>>));
+    return Tag.fromMap(await readTagsAsMap(path: path));
   }
 
   /// Method to read Artwork image from MP3 file.

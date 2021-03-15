@@ -29,20 +29,20 @@ class Tag {
     this.artwork,
   });
 
-  Tag.fromMap(Map map) {
-    title = map["title"];
-    artist = map["artist"];
-    genre = map["genre"];
-    trackNumber = map["trackNumber"];
-    trackTotal = map["trackTotal"];
-    discNumber = map["discNumber"];
-    discTotal = map["discTotal"];
-    lyrics = map["lyrics"];
-    comment = map["comment"];
-    album = map["album"];
-    albumArtist = map["albumArtist"];
-    year = map["year"];
-    artwork = map["artwork"];
+  Tag.fromMap(Map? map) {
+    title = map?["title"];
+    artist = map?["artist"];
+    genre = map?["genre"];
+    trackNumber = map?["trackNumber"];
+    trackTotal = map?["trackTotal"];
+    discNumber = map?["discNumber"];
+    discTotal = map?["discTotal"];
+    lyrics = map?["lyrics"];
+    comment = map?["comment"];
+    album = map?["album"];
+    albumArtist = map?["albumArtist"];
+    year = map?["year"];
+    artwork = map?["artwork"];
   }
 
   Map<String, String?> toMap() {

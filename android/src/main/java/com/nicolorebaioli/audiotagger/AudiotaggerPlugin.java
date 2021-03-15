@@ -177,19 +177,21 @@ public class AudiotaggerPlugin implements MethodCallHandler {
 
             Tag tag = audioFile.getTag();
             Map<String, String> map = new HashMap<>();
-
-            map.put("title", tag.getFirst(FieldKey.TITLE));
-            map.put("artist", tag.getFirst(FieldKey.ARTIST));
-            map.put("genre", tag.getFirst(FieldKey.GENRE));
-            map.put("trackNumber", tag.getFirst(FieldKey.TRACK));
-            map.put("trackTotal", tag.getFirst(FieldKey.TRACK_TOTAL));
-            map.put("discNumber", tag.getFirst(FieldKey.DISC_NO));
-            map.put("discTotal", tag.getFirst(FieldKey.DISC_TOTAL));
-            map.put("lyrics", tag.getFirst(FieldKey.LYRICS));
-            map.put("comment", tag.getFirst(FieldKey.COMMENT));
-            map.put("album", tag.getFirst(FieldKey.ALBUM));
-            map.put("albumArtist", tag.getFirst(FieldKey.ALBUM_ARTIST));
-            map.put("year", tag.getFirst(FieldKey.YEAR));
+            
+            if(tag != null){
+                map.put("title", tag.getFirst(FieldKey.TITLE));
+                map.put("artist", tag.getFirst(FieldKey.ARTIST));
+                map.put("genre", tag.getFirst(FieldKey.GENRE));
+                map.put("trackNumber", tag.getFirst(FieldKey.TRACK));
+                map.put("trackTotal", tag.getFirst(FieldKey.TRACK_TOTAL));
+                map.put("discNumber", tag.getFirst(FieldKey.DISC_NO));
+                map.put("discTotal", tag.getFirst(FieldKey.DISC_TOTAL));
+                map.put("lyrics", tag.getFirst(FieldKey.LYRICS));
+                map.put("comment", tag.getFirst(FieldKey.COMMENT));
+                map.put("album", tag.getFirst(FieldKey.ALBUM));
+                map.put("albumArtist", tag.getFirst(FieldKey.ALBUM_ARTIST));
+                map.put("year", tag.getFirst(FieldKey.YEAR));
+            }
 
             return map;
         } catch (Exception e) {
